@@ -8,7 +8,6 @@ function freeze(){
 		window.busy_applied = 1;
 	}else if(window.busy_applied == 1){
 		window.busy_applied = 2;
-		close();
 		//other things that are nice to do when freezing
 		//alert("[ERROR]\nWhoops! ");
 	}else{
