@@ -5,6 +5,18 @@ ShinyRay.prototype.imageurls = ["shiny2.png"];
 
 ShinyRay.prototype.numRays = 0;
 
+//preload shiny ray images
+for(var i=0;i<ShinyRay.prototype.imageurls.length;i++){
+	ShinyRay.prototype.images.push(new Image());
+	ShinyRay.prototype.images[i].src = "resources/" + ShinyRay.prototype.imageurls[i];
+	ShinyRay.prototype.images[i].onload = function(){
+		ShinyRay.prototype.imagesLoaded+= 1;
+		if(ShinyRay.prototype.imagesLoaded >= ShinyRay.prototype.imageurls.length){
+			ShinyRay.prototype.loaded = true;
+		}
+	}
+}
+
 function ShinyRay(game){
 
 	if(!this.loaded){
