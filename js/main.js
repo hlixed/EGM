@@ -70,7 +70,7 @@ Game.prototype.start = function(){
 	//loop until everything is loaded
 	if(this.cirno.loaded && this.reimu.loaded && this.background.loaded && this.textbox.loaded && shinyLoaded){
 		this.director.start(this);
-		this.tick(0.0);
+		this.tick(performance.now());
 	}else{
 		window.requestAnimationFrame(this.start.bind(this));
 	}
