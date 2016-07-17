@@ -35,7 +35,7 @@ function Director(){
 		['See what?','reimu'],
 		['Ugh! You missed it \nAGAIN? How do you \nforget being trapped in\nsolid ice?','cirno'],
 		['Solid ice? There\'s\nnothing here but snow.','reimu'],
-		["Nuh-uh. I'm not going \nthrough this again.\nI pressed <space> \n now.",'cirno'],
+		["Nuh-uh. I'm not going \nthrough this again.\nI pressed <space> \ntwice now.",'cirno'],
 		["If you don't want to \nadmit defeat, that's \nyour problem.",'cirno'],
 		["I'll gladly admit when \nyou're defeated.",'reimu'],
 		["Not if I press <space> \nbefore you!",'cirno']
@@ -56,8 +56,8 @@ function Director(){
 
 		this.script2 = [['Didn\'t you fly up to\nthe moon a while ago,\nthough?','cirno'],
 		["That was different.","reimu"],
-		["Maybe you're the\n real idiot, then!",'cirno'],
-		["...The only idiot here\nis a little fairy who\ndoesn't quite know when \nto go away.",'reimu'],
+		["Maybe you're the\nreal idiot, then!",'cirno'],
+		["...The only idiot here\nis a little fairy who\ndoesn't quite know \nwhen to go away.",'reimu'],
 		];
 	}else{
 		this.script = [["You didn't see it\nagain.",'cirno'],
