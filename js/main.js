@@ -70,6 +70,7 @@ Game.prototype.start = function(){
 	//loop until everything is loaded
 	if(this.cirno.loaded && this.reimu.loaded && this.background.loaded && this.textbox.loaded && shinyLoaded){
 		this.director.start(this);
+		this.prevTimestep = performance.now();
 		this.tick(performance.now());
 
 		//increment start count
