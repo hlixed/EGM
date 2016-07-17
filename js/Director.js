@@ -13,22 +13,62 @@ function Director(){
 		["I don't see anything \nthat looks frozen.",'reimu'],
 		["Well... \nI just haven't pressed\n<space> yet!",'cirno'],
 		["Pressed what?",'reimu'],
-		["The <space> button!",'cirno'],
-		/*["Space... button?",'reimu'],
-		["No, it's called\nsomething else...\nWhat was it again?\nA spacerod?",'cirno'],
-		["You can't just go\naround pressing space.\nEven an idiot like\nyou should know that.",'reimu']*/
+		["The <space> button!\nWatch!",'cirno'],
 	];
-
-	if(window.localStorage['cirnofrozen'] == "true"){
+	if(window.localStorage['cirnofrozen'] === undefined){
+		//no changes
+	}else if(window.localStorage['cirnofrozen'] == "1"){
 		//already played
-		this.script = [["Ha! Did you see that?",'cirno'],
-	['See what?','reimu'],
-	['It was just a few \nseconds ago! I was \nstanding right here and \nyou were all frozen!','cirno'],
-	['I didn\'t see anything.\nYou just got here, Cirno.','reimu'],
-	["Huh? No I didn't! I just \nfroze everything, right \nin front of you!",'cirno'],
-	["I didn't see you do \nanything.",'reimu'],
-	["You just flew up\nto me and started \ntalking nonsense. I \ndidn't see anything\nelse.",'reimu'],
-	["Yes you did! I pressed \n<space> to activate it\n and everything!",'cirno']
+			this.script = [["Ha! Did you see that?",'cirno'],
+		['See what?','reimu'],
+		['It was just a few \nseconds ago! I was \nstanding right here and \nyou were all frozen!','cirno'],
+		['I didn\'t see anything.\nYou just got here, Cirno.','reimu'],
+		["Huh? No I didn't! I just \nfroze everything, right \nin front of you!",'cirno'],
+		["I didn't see you do \nanything.",'reimu'],
+		["You just flew up\nto me and started \ntalking nonsense. I \ndidn't see anything\nelse.",'reimu'],
+		["Yes you did! I pressed \n<space> to activate it\n and everything!",'cirno']
+		];
+	}
+	else if(window.localStorage['cirnofrozen'] == "2"){
+		//already played
+			this.script = [["Did you see it this time?",'cirno'],
+		['See what?','reimu'],
+		['Ugh! You missed it \nAGAIN? How do you \nforget being trapped in\nsolid ice?','cirno'],
+		['Solid ice? There\'s\nnothing here but snow.','reimu'],
+		["Nuh-uh. I'm not going \nthrough this again.\nI pressed <space> \n now.",'cirno'],
+		["If you don't want to \nadmit defeat, that's \nyour problem.",'cirno'],
+		["I'll gladly admit when \nyou're defeated.",'reimu'],
+		["Not if I press <space> \nbefore you!",'cirno']
+		];
+
+			this.script2 = [["Well?",'reimu'],
+		["I don't see anything \nthat looks frozen.",'reimu'],
+		["Well, you should have\nlooked last time I \npressed <space>, then!",'cirno']];
+	}else if(window.localStorage['cirnostarted'] == "3" || window.localStorage['cirnofrozen'] == '3'){
+		this.script = [["You didn't see it, did \nyou?",'cirno'],
+		['See what?','reimu'],
+		["Me pressing the \n<space> button!",'cirno'],
+		["Space... button?",'reimu'],
+		["No, it's called\nsomething else...\nWhat was it again?\nA spacerod?",'cirno'],
+		["You can't just go\naround pressing space.",'reimu'],
+		['You\'d die if you tried \nto fly that high.\nEven an idiot like\nyou should know that.','reimu'],
+		['Nuh-uh! Maybe I\'ll \nprove it to you by \npressing <space> now!','cirno']];
+
+		this.script2 = [['Didn\'t you fly up to\nthe moon a while ago,\nthough?','cirno'],
+		["That was different.","reimu"],
+		["Maybe you're the\n real idiot, then!",'cirno'],
+		["...The only idiot here\nis a little fairy who\ndoesn't quite know when \nto go away.",'reimu'],
+		];
+	}else{
+		this.script = [["You didn't see it\nagain.",'cirno'],
+		['See what?','reimu'],
+		["Exactly! It's like\nyou don't remember\nanything at all!",'cirno'],
+		["I remember enough to \nknow that you're a pain.",'reimu'],
+		['Maybe there\'s some \nyoukai with forgetting \npowers around.','cirno'],
+		['How many times do I\nhave to press <space>\nbefore you see it?','cirno']];
+
+		this.script2 = [["Maybe I'll go find\nthat youkai later today.",'cirno'],
+		["...after I'm done\nstanding here.",'cirno'],
 		];
 	}
 

@@ -71,6 +71,14 @@ Game.prototype.start = function(){
 	if(this.cirno.loaded && this.reimu.loaded && this.background.loaded && this.textbox.loaded && shinyLoaded){
 		this.director.start(this);
 		this.tick(performance.now());
+
+		//increment start count
+		if(window.localStorage["cirnostarted"] === undefined){
+			window.localStorage["cirnostarted"] = "1";
+		}else{
+			window.localStorage["cirnostarted"] = parseInt(window.localStorage["cirnostarted"])+1;
+		}
+
 	}else{
 		window.requestAnimationFrame(this.start.bind(this));
 	}

@@ -1,21 +1,22 @@
 function freeze(){
-	window.localStorage["cirnofrozen"] = "true";
-	if(window.busy_applied === undefined){
-		document.getElementById("container").style.cursor = "wait";
-		var start = performance.now();
-		document.title += " (Not Responding)";
-		document.getElementById("frostedeffect").style.backgroundColor = 'rgba(230,230,255,0.5)';
-		window.busy_applied = 1;
-	}else if(window.busy_applied == 1){
-		window.busy_applied = 2;
-		//other things that are nice to do when freezing
-		//alert("[ERROR]\nWhoops! ");
+	//increment localstorage count
+	if(window.localStorage["cirnofrozen"] === undefined){
+		window.localStorage["cirnofrozen"] = "1";
 	}else{
-		while(performance.now() - start < 500){
-			//haha frozen
-		}
-
+		window.localStorage["cirnofrozen"] = parseInt(window.localStorage["cirnofrozen"])+1;
 	}
+
+	document.getElementById("container").style.cursor = "wait";
+	var start = performance.now();
+	document.title += " (Not Responding)";
+	document.getElementById("frostedeffect").style.backgroundColor = 'rgba(230,230,255,0.5)';
 	game.stopped = true;
-	window.requestAnimationFrame(freeze);
+	lag();
+}
+
+function lag(){
+	while(performance.now() - start < 500){
+		//haha frozen
+	}
+	window.requestAnimationFrame(lag);
 }
